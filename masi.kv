@@ -1,0 +1,41 @@
+<MainScreen>:
+    orientation: 'horizontal'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.7, 1
+        CanvasWidget:
+            id: canvas_widget
+            size_hint: 1, 1
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.3, 1
+        padding: 5
+        spacing: 5
+        Button:
+            text: 'Sequencing'
+            on_press: root.sequencing_button()
+        Label:
+            text: 'Name:'
+        TextInput:
+            text: root.name_var
+            on_text: root.name_var = self.text
+        Label:
+            text: 'Description:'
+        TextInput:
+            text: root.desc_var
+            on_text: root.desc_var = self.text
+        Button:
+            text: 'Save'
+            on_press: root.savef()
+        Button:
+            text: 'Clear'
+            on_press: root.clear_canvas()
+        Button:
+            text: 'Load'
+            on_press: root.loadf()
+        Button:
+            text: 'Change'
+            on_press: root.changef()
+        Button:
+            text: 'Exit'
+            on_press: app.stop()
